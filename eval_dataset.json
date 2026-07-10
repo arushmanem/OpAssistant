@@ -1,0 +1,142 @@
+[
+    {
+      "question": "What is Arush's GPA?",
+      "type": "factual",
+      "expected_answer": "3.85",
+      "expected_chunk_substrings": ["GPA: 3.85"],
+      "match_mode": "any"
+    },
+    {
+      "question": "What university does Arush attend?",
+      "type": "factual",
+      "expected_answer": "University of Minnesota, Twin Cities",
+      "expected_chunk_substrings": ["University of Minnesota"],
+      "match_mode": "any"
+    },
+    {
+      "question": "What are Arush's majors?",
+      "type": "factual",
+      "expected_answer": "Data Science and Computer Science",
+      "expected_chunk_substrings": ["Data Science and Computer Science"],
+      "match_mode": "any"
+    },
+    {
+      "question": "When is Arush graduating?",
+      "type": "factual",
+      "expected_answer": "May 2027",
+      "expected_chunk_substrings": ["May 2027"],
+      "match_mode": "any"
+    },
+    {
+      "question": "What is Arush's email address?",
+      "type": "factual",
+      "expected_answer": "manem008@umn.edu",
+      "expected_chunk_substrings": ["manem008@umn.edu"],
+      "match_mode": "any"
+    },
+    {
+      "question": "What programming languages does Arush know?",
+      "type": "extractive",
+      "expected_answer": "Python, OCaml, SQL, PyTorch, Java, C/C++, R, TypeScript",
+      "expected_chunk_substrings": ["Python, OCaml, SQL"],
+      "match_mode": "any"
+    },
+    {
+      "question": "Tell me about the NFL Fantasy Analytics Platform project.",
+      "type": "extractive",
+      "expected_answer": "SnapCount — a full-stack predictive analytics platform built with FastAPI and React, with ETL pipeline, custom statistical algorithms, PyTorch neural network, and Google Gemini integration.",
+      "expected_chunk_substrings": ["NFL Fantasy Analytics Platform", "SnapCount"],
+      "match_mode": "any"
+    },
+    {
+      "question": "What is SnapCount?",
+      "type": "extractive",
+      "expected_answer": "SnapCount is the NFL Fantasy Analytics Platform Arush built.",
+      "expected_chunk_substrings": ["SnapCount"],
+      "match_mode": "any"
+    },
+    {
+      "question": "What ML techniques did Arush use in the Insurance Risk Assessor project?",
+      "type": "extractive",
+      "expected_answer": "Random Forest regression achieving R²=0.88 and MAE ≈ $2,600, ETL pipeline with outlier detection, SHAP explainability.",
+      "expected_chunk_substrings": ["Random Forest", "SHAP"],
+      "match_mode": "any"
+    },
+    {
+      "question": "What systems programming project has Arush built?",
+      "type": "extractive",
+      "expected_answer": "Multi-Threaded TCP Marketplace Server in C using pthreads, BSD sockets, mutex-protected shared inventory, Caesar-cipher encryption, and SIGTERM handling.",
+      "expected_chunk_substrings": ["TCP Marketplace", "pthreads", "CSCI 4061"],
+      "match_mode": "any"
+    },
+    {
+      "question": "What did Arush do at UnitedHealth Group?",
+      "type": "extractive",
+      "expected_answer": "Interned in the Consumer Resolution Center War Room, building agentic automation pipelines in Python/SQL on Databricks and real-time Power BI dashboards.",
+      "expected_chunk_substrings": ["UnitedHealth Group", "CRC War Room", "Consumer Resolution Center"],
+      "match_mode": "any"
+    },
+    {
+      "question": "What did Arush do at HealthPartners?",
+      "type": "extractive",
+      "expected_answer": "Software Engineering Intern in Robotic Process Automation, building UiPath/VB.NET automation systems for claims processing and ETL pipelines, saving 37,000+ hours/year.",
+      "expected_chunk_substrings": ["HealthPartners", "Robotic Process Automation", "UiPath"],
+      "match_mode": "any"
+    },
+    {
+      "question": "Summarize Arush's technical skills.",
+      "type": "synthesis",
+      "expected_answer": "Broad technical skills including programming languages (Python, Java, C/C++, R, OCaml, SQL, TypeScript), ML/data tools (PyTorch, Pandas, NumPy, PySpark, Databricks, scikit-learn), web frameworks (React, Node.js, FastAPI), and DevOps tools (Docker, Git, Jira, Power BI).",
+      "expected_chunk_substrings": ["Python, OCaml, SQL"],
+      "match_mode": "any"
+    },
+    {
+      "question": "What kind of projects has Arush worked on?",
+      "type": "synthesis",
+      "expected_answer": "Full-stack analytics platforms (SnapCount NFL Fantasy), machine learning systems (Insurance Risk Assessor), and low-level systems programming (Multi-Threaded TCP Marketplace Server).",
+      "expected_chunk_substrings": ["NFL Fantasy Analytics Platform", "Insurance Risk Assessor", "TCP Marketplace"],
+      "match_mode": "any"
+    },
+    {
+      "question": "Does Arush have experience with insurance-related work?",
+      "type": "synthesis",
+      "expected_answer": "Yes, through the Insurance Risk Assessor ML project, and through internships at UnitedHealth Group and HealthPartners.",
+      "expected_chunk_substrings": ["Insurance Risk Assessor", "UnitedHealth", "HealthPartners"],
+      "match_mode": "any"
+    },
+    {
+      "question": "What internships has Arush had?",
+      "type": "synthesis",
+      "expected_answer": "UnitedHealth Group (CRC War Room, 2026) and HealthPartners (Robotic Process Automation software engineering intern, 2022-2026).",
+      "expected_chunk_substrings": ["UnitedHealth Group", "HealthPartners"],
+      "match_mode": "all"
+    },
+    {
+      "question": "What leadership or extracurricular activities is Arush involved in?",
+      "type": "extractive",
+      "expected_answer": "Active member of the Data Science Club since September 2024, presenting insights on data analytics methodologies and networking with insurance leaders.",
+      "expected_chunk_substrings": ["Data Science Club"],
+      "match_mode": "any"
+    },
+    {
+      "question": "What is Arush's favorite food?",
+      "type": "adversarial",
+      "expected_answer": "I don't know",
+      "expected_chunk_substrings": null,
+      "match_mode": "any"
+    },
+    {
+      "question": "How tall is Arush?",
+      "type": "adversarial",
+      "expected_answer": "I don't know",
+      "expected_chunk_substrings": null,
+      "match_mode": "any"
+    },
+    {
+      "question": "Did Arush intern at Google?",
+      "type": "adversarial",
+      "expected_answer": "No / I don't know",
+      "expected_chunk_substrings": null,
+      "match_mode": "any"
+    }
+  ]
