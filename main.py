@@ -1,8 +1,10 @@
 """Entry point: orchestrates the RAG pipeline."""
 from rag.document_loader import load_pdf, chunk_text
 from rag.embeddings import embed_batch, embed_text
-from rag.vector_store import get_collection, store_chunks, retrieve
+from rag.vector_store import get_collection, store_chunks
+from rag.hybrid_retrieval import BM25Index, hybrid_retrieve
 from rag.llm import generate_answer
+from config import RESUME_PATH
 
 
 def ingest(pdf_path: str):
@@ -22,15 +24,17 @@ def ingest(pdf_path: str):
     collection = get_collection(reset=True)
     store_chunks(collection, chunks, embeddings)
     print(f"  → {collection.count()} chunks stored\n")
-    
-    return collection
+
+    bm25_index = BM25Index(chunks)
+
+    return collection, bm25_index
 
 
-def ask(collection, question: str) -> str:
+def ask(collection, bm25_index, question: str) -> str:
     """Answer a question using the RAG pipeline."""
     question_vector = embed_text(question)
-    chunks = retrieve(collection, question_vector, n_results=5)
-    
+    chunks = hybrid_retrieve(collection, bm25_index, question, question_vector, n_results=5)
+
     # Debug: show what chunks were retrieved
     print("  [DEBUG] Retrieved chunks:")
     for i, c in enumerate(chunks):
@@ -41,7 +45,7 @@ def ask(collection, question: str) -> str:
 
 if __name__ == "__main__":
     # Ingest the PDF once at startup
-    collection = ingest("ArushManem_Resume_Updated copy.docx.pdf")
+    collection, bm25_index = ingest(RESUME_PATH)
     
     print("Ready! Ask questions about the document. Type 'quit' to exit.\n")
     
@@ -58,5 +62,5 @@ if __name__ == "__main__":
             continue
         
         # Answer and print
-        answer = ask(collection, question)
+        answer = ask(collection, bm25_index, question)
         print(f"A: {answer}\n")

@@ -23,3 +23,8 @@ CHUNK_OVERLAP = 100
 # ChromaDB config
 CHROMA_PATH = "./chroma_db"
 COLLECTION_NAME = "resume"
+
+# Reciprocal Rank Fusion constant (60 is the value from the original RRF paper)
+RRF_K = 60
+
+RESUME_PATH = "ArushManem_Redacted.pdf"
